@@ -20,7 +20,9 @@ public class Main {
             System.out.println("DIGITE 2 - para adicionar paises vizinhos a um pais");
             System.out.println("DIGITE 3 - para listar os paises  ");
             System.out.println("DIGITE 4 - para consultar os vizinhos de seu pais");
-            System.out.println("DIGITE 5 - para sair");
+            System.out.println("DIGITE 5 - para saber de quem seu pais e vizinho");
+            System.out.println("DIGITE 6 - para mostrar Densidade");
+            System.out.println("DIGITE 7 - para sair");
             int menu = scan.nextInt();
 
            switch (menu){
@@ -58,7 +60,7 @@ public class Main {
 
                        System.out.println("Pais " +i   +" " +paises.get(i).getNome());
                    }
-                   System.out.println("De qual pais deseja ser vizinho? Digite o numero");
+                   System.out.println("De qual pais deseja saber vizinho? Digite o numero");
                    tamanhoPaisesVizinhos = scan.nextInt();
 
                    System.out.println("Paises vizinhos de " +paises.get(tamanhoPaisesVizinhos).getNome());
@@ -67,21 +69,35 @@ public class Main {
                    }
                    break;
                case 5:
-                   System.out.println("De qual pais deseja ver a densidade?");
+                   System.out.println("Confira se seu pais é vizinho de outro ja inserido");
                    for(int i = 1; i < paises.size(); i++){
                        System.out.println("Pais " +i   +" " +paises.get(i).getNome());
                    }
                    String paisEscolhido = scan.next();
-                   for(int i = 1; i < paises.size(); i++){
+                   for(int i = 0; i < paises.size(); i++){
                        tamanhoPaisesVizinhos = paises.get(i).getPaisesVizinhos().size();
-                       for (int j = 1 ; j < tamanhoPaisesVizinhos ; j++ ) {
+                       for (int j = 0 ; j < tamanhoPaisesVizinhos ; j++ ) {
                            String nome1 = paises.get(i).getPaisesVizinhos().get(j).getNome();
                            if (nome1.equals(paisEscolhido) ) {
                                System.out.println(paises.get(i).getNome());
+                           }else{
+
                            }
                        }
                    }
                    break;
+               case 6:
+                   System.out.println("De qual pais deseja ver a densidade?");
+                   for(int i = 1; i < paises.size(); i++){
+                       System.out.println("Pais " +i   +" " +paises.get(i).getNome());
+                   }
+                   int buscarDensidade = scan.nextInt();
+                   paises.get(buscarDensidade).buscarDensidade();
+                   break;
+               case 7:
+                   rodar = false;
+                   break;
+
             }
 
         }

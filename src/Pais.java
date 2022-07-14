@@ -39,6 +39,7 @@ public class Pais {
     }
 
     Double buscarDensidade(){
+        System.out.println(getPopulacao());
         return getPopulacao();
     }
     public Scanner getScan() {
