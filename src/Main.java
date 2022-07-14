@@ -69,7 +69,7 @@ public class Main {
                    }
                    break;
                case 5:
-                   System.out.println("Confira se seu pais é vizinho de outro ja inserido");
+                   System.out.println("Confira se seu pais é vizinho de outro ja inserido, insira o nome do pais");
                    for(int i = 1; i < paises.size(); i++){
                        System.out.println("Pais " +i   +" " +paises.get(i).getNome());
                    }
