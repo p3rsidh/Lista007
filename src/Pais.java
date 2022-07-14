@@ -34,6 +34,9 @@ public class Pais {
         return novoNome;
     }
 
+    int tamanhoLista(){
+        return paisesVizinhos.size();
+    }
     public Scanner getScan() {
         return scan;
     }
