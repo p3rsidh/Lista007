@@ -53,9 +53,9 @@ public class Main {
                    break;
                case 4:
                    System.out.println(novoPais.tamanhoLista());
-                   int tamanhoArray = -1;
+
                    for(int i = 1; i < paises.size(); i++){
-                       tamanhoArray++;
+
                        System.out.println("Pais " +i   +" " +paises.get(i).getNome());
                    }
                    System.out.println("De qual pais deseja ser vizinho? Digite o numero");
@@ -67,7 +67,20 @@ public class Main {
                    }
                    break;
                case 5:
-                   rodar = false;
+                   System.out.println("De qual pais deseja ver a densidade?");
+                   for(int i = 1; i < paises.size(); i++){
+                       System.out.println("Pais " +i   +" " +paises.get(i).getNome());
+                   }
+                   String paisEscolhido = scan.next();
+                   for(int i = 1; i < paises.size(); i++){
+                       tamanhoPaisesVizinhos = paises.get(i).getPaisesVizinhos().size();
+                       for (int j = 1 ; j < tamanhoPaisesVizinhos ; j++ ) {
+                           String nome1 = paises.get(i).getPaisesVizinhos().get(j).getNome();
+                           if (nome1.equals(paisEscolhido) ) {
+                               System.out.println(paises.get(i).getNome());
+                           }
+                       }
+                   }
                    break;
             }
 

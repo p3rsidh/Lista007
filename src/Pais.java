@@ -37,6 +37,10 @@ public class Pais {
     int tamanhoLista(){
         return paisesVizinhos.size();
     }
+
+    Double buscarDensidade(){
+        return getPopulacao();
+    }
     public Scanner getScan() {
         return scan;
     }
