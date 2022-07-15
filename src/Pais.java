@@ -43,6 +43,13 @@ public class Pais {
         System.out.println(densidade);
         return getPopulacao();
     }
+
+    void saberVizinhos(){
+        for (int i = 0; i < paisesVizinhos.size(); i++){
+            System.out.println(paisesVizinhos.get(i).getNome());
+        }
+
+    }
     public Scanner getScan() {
         return scan;
     }

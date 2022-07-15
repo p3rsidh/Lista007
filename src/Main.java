@@ -54,7 +54,6 @@ public class Main {
                     }
                    break;
                case 4:
-                   System.out.println(novoPais.tamanhoLista());
 
                    for(int i = 1; i < paises.size(); i++){
 
@@ -64,9 +63,8 @@ public class Main {
                    tamanhoPaisesVizinhos = scan.nextInt();
 
                    System.out.println("Paises vizinhos de " +paises.get(tamanhoPaisesVizinhos).getNome());
-                   for(int i = 0; i < paises.get(tamanhoPaisesVizinhos).getPaisesVizinhos().size(); i++) {
-                       System.out.println(paises.get(tamanhoPaisesVizinhos).paisesVizinhos.get(i).getNome());
-                   }
+                  paises.get(tamanhoPaisesVizinhos).saberVizinhos();
+
                    break;
                case 5:
                    System.out.println("Confira se seu pais é vizinho de outro ja inserido, insira o nome do pais");
