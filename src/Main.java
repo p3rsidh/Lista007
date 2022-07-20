@@ -39,13 +39,17 @@ public class Main {
                    paises.add(paisInicial);
                    break;
                case 2:
-                   System.out.println("PARA QUAL PAIS DESEJA ADICIONAR VIZINHO?");
-                   for(int i = 1; i < paises.size(); i++){
-                       System.out.println("Pais " +i   +" " +paises.get(i).getNome());
+                   if(paises.size()>1) {
+                       System.out.println("PARA QUAL PAIS DESEJA ADICIONAR VIZINHO?");
+                       System.out.println("Selecione o numero correspondente");
+                       for (int i = 1; i < paises.size(); i++) {
+                           System.out.println("Pais " + i + " " + paises.get(i).getNome());
+                       }
+                       int escolherPais = scan.nextInt();
+                       paises.get(escolherPais).incluirPaisVizinho();
+                   }else {
+                       System.out.println("Primeiro voce deve adicionar um pais, e então adiconar seu vizinho");
                    }
-                   int escolherPais = scan.nextInt();
-                   paises.get(escolherPais).incluirPaisVizinho();
-
 
                    break;
                case 3:
@@ -55,15 +59,16 @@ public class Main {
                    break;
                case 4:
 
-                   for(int i = 1; i < paises.size(); i++){
+                       for (int i = 1; i < paises.size(); i++) {
 
-                       System.out.println("Pais " +i   +" " +paises.get(i).getNome());
-                   }
-                   System.out.println("De qual pais deseja saber vizinho? Digite o numero");
-                   tamanhoPaisesVizinhos = scan.nextInt();
+                           System.out.println("Pais " + i + " " + paises.get(i).getNome());
+                       }
+                       System.out.println("De qual pais deseja saber vizinho? Digite o numero");
+                       tamanhoPaisesVizinhos = scan.nextInt();
 
-                   System.out.println("Paises vizinhos de " +paises.get(tamanhoPaisesVizinhos).getNome());
-                  paises.get(tamanhoPaisesVizinhos).saberVizinhos();
+                       System.out.println("Paises vizinhos de " + paises.get(tamanhoPaisesVizinhos).getNome());
+                       paises.get(tamanhoPaisesVizinhos).saberVizinhos();
+
 
                    break;
                case 5:
